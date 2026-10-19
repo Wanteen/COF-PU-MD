@@ -38,3 +38,13 @@ python -m tppa_tpu.lunar --root external/LUNAR --tool all2lmp -- -man
 ```
 
 Actual parameterization requires validated molecular input, a supported PCFF `.frc`, and full Class-II parameter/energy checks; none have been certified yet.
+
+## Research campaign (2026-10)
+
+See [evidence-led research plan](docs/RESEARCH_PLAN.md) and [candidate campaign](configs/campaign.yaml). Validate and create **metadata-only** model workspaces:
+
+```bash
+python -m tppa_tpu.campaign configs/campaign.yaml --output workspaces
+```
+
+The resulting manifests are **not** molecular coordinates or runnable simulations; every candidate remains unbuilt until structure, PCFF, and physics checks pass.
