@@ -12,3 +12,7 @@ dist/
 *.frc
 data/private/
 results/
+
+external/
+*.nta
+*.frc
