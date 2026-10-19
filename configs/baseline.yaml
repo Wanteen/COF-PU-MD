@@ -1,0 +1,22 @@
+project: TpPa-TPU
+cof:
+  identity: TpPa-beta-ketoenamine
+  structure_file: null
+  functionalization: none
+polyurethane:
+  mdi_moles: 3
+  ptmg_moles: 2
+  bdo_moles: 1
+  ptmg_repeat_units: 14
+  ptmg_target_mn_g_mol: 1000
+  chemistry: isocyanate_alcohol_addition
+forcefield:
+  family: PCFF
+  source_frc: null
+  require_class2_cross_terms: true
+  allow_missing_parameters: false
+reaction:
+  engine: lammps_fix_bond_react
+  cutoff_angstrom: null
+  probability: null
+  templates_verified: false
