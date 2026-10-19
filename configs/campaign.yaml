@@ -1,0 +1,55 @@
+campaign: tppa_tpu_v1
+formulation:
+  mdi: 3
+  ptmg: 2
+  bdo: 1
+  ptmg_repeat_units: 14
+models:
+  - id: P0
+    stage: fixed_topology
+    cof: none
+    geometry: bulk
+    notes: neat TPU reference
+  - id: P1
+    stage: fixed_topology
+    cof: TpPa
+    geometry: periodic_monolayer
+    notes: periodic basal-plane interface
+  - id: P3_3nm
+    stage: fixed_topology
+    cof: TpPa
+    geometry: finite_nanosheet
+    lateral_size_nm: 3
+    notes: edge-terminated fragment; no template coordinates supplied
+  - id: P3_5nm
+    stage: fixed_topology
+    cof: TpPa
+    geometry: finite_nanosheet
+    lateral_size_nm: 5
+    notes: edge-terminated fragment; no template coordinates supplied
+  - id: P3_8nm
+    stage: fixed_topology
+    cof: TpPa
+    geometry: finite_nanosheet
+    lateral_size_nm: 8
+    notes: edge-terminated fragment; no template coordinates supplied
+  - id: P4
+    stage: heterogeneity
+    cof: TpPa
+    geometry: multilayer_disordered
+    notes: lateral slip and interlayer fluctuations; sample, not assume values
+  - id: R0
+    stage: reactive
+    cof: none
+    geometry: bulk
+    notes: neat TPU in-situ reaction control
+  - id: R1
+    stage: reactive
+    cof: TpPa
+    geometry: finite_nanosheet
+    notes: TpPa-present in-situ polymerization
+  - id: R2
+    stage: future_grafting
+    cof: TpPa-OH
+    geometry: finite_nanosheet
+    notes: separate OH-grafting phase
