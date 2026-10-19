@@ -27,3 +27,14 @@ pytest -q
 The Python generator is for **initial molecular connectivity and coordinates**, not a substitute for PCFF force-field parameterization or polymerization dynamics.
 
 Reference: Hao et al., ACS Nano 2024, DOI: 10.1021/acsnano.3c11787.
+
+## LUNAR integration
+The project now includes a **real CLI subprocess adapter** for upstream CMMRLab/LUNAR (external checkout, not vendored). See [docs/LUNAR.md](docs/LUNAR.md).
+
+```bash
+bash scripts/install_lunar.sh
+python -m tppa_tpu.lunar --root external/LUNAR --tool atom_typing -- -man
+python -m tppa_tpu.lunar --root external/LUNAR --tool all2lmp -- -man
+```
+
+Actual parameterization requires validated molecular input, a supported PCFF `.frc`, and full Class-II parameter/energy checks; none have been certified yet.
