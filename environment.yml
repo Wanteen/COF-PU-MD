@@ -1,0 +1,14 @@
+name: tppa-tpu
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - rdkit
+  - pyyaml
+  - numpy
+  - scipy
+  - ase
+  - mdanalysis
+  - packmol
+  - pytest
+  - pip
