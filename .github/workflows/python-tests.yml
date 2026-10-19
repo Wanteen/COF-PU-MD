@@ -1,0 +1,20 @@
+name: Python tests
+on:
+  push:
+  pull_request:
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: conda-incubator/setup-miniconda@v3
+        with:
+          activate-environment: tppa-tpu
+          environment-file: environment.yml
+          auto-activate-base: false
+      - name: Validate chemistry utilities
+        shell: bash -el {0}
+        run: |
+          pip install -e .
+          pytest -q
+          python -m tppa_tpu.cli validate-config configs/baseline.yaml
